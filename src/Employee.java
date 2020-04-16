@@ -1,38 +1,35 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public abstract class Employee {
-    private ArrayList<Client> clients;
-    public Employee(){
-        clients = new ArrayList<Client>();
-    }
+    private ArrayList<Client> clients = new ArrayList<Client>();
+
+
+//    public Employee(){
+//        clients = new ArrayList<Client>();
+//    }
 
 
     public boolean addClient(Client aClient){
         clients.add(aClient);
-        sort(clients);
-        aClient.setSales(this);
-        return true;
+        sortClient(clients);
+        return false;
     }
-    public ArrayList<Client> getClients(){
+    public static ArrayList<Client> getClients(ArrayList<Client> clients){
         return clients;
     }
 
-    private ArrayList<Client> sort(ArrayList<Client> clients) {
-        Client firstClient = null;
-        int minID = 100000;
-        ArrayList<Client> sortedClients = new ArrayList<Client>();
-        for(Client aClient : clients) {
-                if(aClient.getClientID() < minID) {
-                    minID = aClient.getClientID();
-                    firstClient = aClient;
-                }
-            sortedClients.add(firstClient);
-        }
-        return sortedClients;
+    private ArrayList<Client> sortClient(ArrayList<Client> clients) {
+        ArrayList<Client> clientsToBeSorted = new ArrayList<Client>();
+        Collections.sort(clientsToBeSorted, new CustomComparator());
     }
-}
+
+    public class CustomComparator implements Comparator<Client> {
+        @Override
+        public int compare(Client client1, Client client2) {
+            return client1.getClientID().compareTo(client2.getClientID());
+        }
+    }
+
 
 }
+

@@ -2,15 +2,15 @@ import java.util.ArrayList;
 import java.util.Set;
 
 public class SalesManager extends Employee{
-    String employeeName;
-    ArrayList<Employee> employees = new ArrayList<Employee>();
-    SalesManager manager;
-    long salesID;
+    protected String employeeName;
+    protected ArrayList<Employee> emp;
+    protected SalesManager manager;
+    protected long salesID;
 
-    public SalesManager(Set theseClients, String aEmployeeName, ArrayList<Employee>theseEmployees, SalesManager aManager, long aSalesID){
-        super();
+    public SalesManager(Set theseClients, String aEmployeeName, ArrayList<Employee>emp, SalesManager aManager, long aSalesID){
+//        super();
         this.employeeName = aEmployeeName;
-        this.employees = theseEmployees;
+        this.emp=emp;
         this.manager = aManager;
         this.salesID = aSalesID;
     }
@@ -24,11 +24,11 @@ public class SalesManager extends Employee{
     }
 
     protected ArrayList<Employee> getEmployees() {
-        return employees;
+        return emp;
     }
 
-    protected void setEmployees(ArrayList<Employee> employees) {
-        this.employees = employees;
+    protected void setEmployees(ArrayList<Employee>emp) {
+        this.emp = emp;
     }
 
     protected void setManager(SalesManager manager) {
@@ -48,6 +48,6 @@ public class SalesManager extends Employee{
     }
 
     protected double bonus(){
-        return 0;
+        return 10000*this.getClients().size();
     }
 }

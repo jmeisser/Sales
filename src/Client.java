@@ -1,21 +1,22 @@
 public class Client{
-    int clientID;
-    String clientName;
-    private Employee sales;
-    public void setSales(Employee newSales){
-        if(sales != newSales){
-            Employee old = sales;
-            sales = newSales;
-            if(newSales != null){
-                newSales.addClient(this);
-            }
-        }
-    }
+    private int clientID;
+    private String clientName;
+    private double sales;
+    private Employee emp;
 
-    public Client (int aClientID, String aClientName){
+
+    public Client (int aClientID, String aClientName, Employee emp){
         this.clientID = aClientID;
         this.clientName = aClientName;
+        this.emp=emp;
     }
+
+//    @Override
+//    public int compareTo(Client clientCmp) {
+//        int cmpClientID=((Client)clientCmp).getClientID();
+//        /* For Ascending order*/
+//        return this.clientID-cmpClientID;
+//    }
 
     protected int getClientID() {
         return clientID;
@@ -33,7 +34,16 @@ public class Client{
         this.clientName = clientName;
     }
 
+//    public void setSales(Employee newSales){
+//        if(sales != newSales){
+//            Employee old = sales;
+//            sales = newSales;
+//            if(newSales != null){
+//                newSales.addClient(this);
+//            }
+//        }
+//    }
     public double totalSales(){
-        return 0;
+        return 0.0;
     }
 }
