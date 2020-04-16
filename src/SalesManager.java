@@ -7,10 +7,10 @@ public class SalesManager extends Employee{
     SalesManager manager;
     long salesID;
 
-    public SalesManager(String aEmployeeName, ArrayList<Employee>theseEmployees, SalesManager aManager, long aSalesID){
+    public SalesManager(String aEmployeeName, SalesManager aManager, long aSalesID){
         super();
         this.employeeName = aEmployeeName;
-        this.employees = theseEmployees;
+        this.employees = new ArrayList<Employee>();
         this.manager = aManager;
         this.salesID = aSalesID;
     }
@@ -22,7 +22,13 @@ public class SalesManager extends Employee{
     protected void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
     }
-
+//    public ArrayList<String> getEmployeeNames() {
+//        ArrayList<String> employeeNames = new ArrayList<String>();
+//        for(Employee aEmployee : this.employees){
+//            employeeNames.add(aEmployee.);
+//        }
+//        return employeeNames;
+//    }
     protected ArrayList<Employee> getEmployees() {
         return employees;
     }

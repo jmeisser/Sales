@@ -5,7 +5,7 @@ public class TestEmployee extends Employee {
         Client bert = new Client(133, "Bert");
         Client morpheus = new Client(5813, "Morpheus");
         Client bob = new Client(319, "Bob");
-        SalesManager Sam = new SalesManager("Sam",null,null,254);
+        SalesManager Sam = new SalesManager("Sam",null,254);
         Sam.addClient(bob);
         Sam.addClient(bert);
         Sam.addClient(morpheus);
