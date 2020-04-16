@@ -6,7 +6,7 @@ public class SalesAssociate extends Employee {
     SalesManager manager;
     long salesID;
 
-    public SalesAssociate(Set theseClients, String aEmployeeName, SalesManager aManager, long aSalesID){
+    public SalesAssociate(String aEmployeeName, SalesManager aManager, long aSalesID){
         super();
         this.employeeName = aEmployeeName;
         this.manager = aManager;
@@ -38,6 +38,6 @@ public class SalesAssociate extends Employee {
     }
 
     public double bonus(){
-        return 0;
+        return 10000*this.getClients().size();
     }
 }

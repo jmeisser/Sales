@@ -1,20 +1,21 @@
-public class Client{
+import java.util.Comparator;
+
+public class Client implements Comparable<Client>{
     int clientID;
     String clientName;
     private Employee sales;
-    public void setSales(Employee newSales){
-        if(sales != newSales){
-            Employee old = sales;
-            sales = newSales;
-            if(newSales != null){
-                newSales.addClient(this);
-            }
-        }
-    }
 
     public Client (int aClientID, String aClientName){
         this.clientID = aClientID;
         this.clientName = aClientName;
+    }
+
+    public void setSales(Employee newSales){
+        this.sales = newSales;
+    }
+    @Override
+    public int compareTo(Client aClient){
+        return this.clientID-aClient.clientID;
     }
 
     protected int getClientID() {
