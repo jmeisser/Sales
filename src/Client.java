@@ -35,6 +35,6 @@ public class Client implements Comparable<Client>{
     }
 
     public double totalSales(){
-        return 0;
+        return 37.52;
     }
 }

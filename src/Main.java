@@ -29,6 +29,5 @@ public class Main {
         System.out.println("Sales Manager: " + mngCharlie.employeeName + " Employees: " + mngCharlie.employees + " Clients: " + mngCharlie.getClientInfo());
         System.out.println("Sales Associate: " + asscSven.employeeName + " Sales Manager: " + asscSven.manager.employeeName + " Clients: " + asscSven.getClientInfo());
         System.out.println("Sales Associate: " + asscAlex.employeeName + " Sales Manager: " + asscAlex.manager.employeeName + " Clients: " + asscAlex.getClientInfo());
-
     }
 }
